@@ -10,12 +10,13 @@ var coveralls = require('gulp-coveralls');
 var babel = require('gulp-babel');
 var del = require('del');
 var isparta = require('isparta');
-
+var jsPaths = ['lib/**/*.js', 'test/**'];
 // Initialize the babel transpiler so ES2015 files gets compiled
 // when they're loaded
 require('babel-register');
 
 gulp.task('static', function () {
+  //return gulp.src(jsPaths)
   return gulp.src('**/*.js')
     .pipe(excludeGitignore())
     .pipe(eslint())
@@ -77,3 +78,4 @@ gulp.task('clean', function () {
 
 gulp.task('prepublish', ['nsp', 'babel']);
 gulp.task('default', ['static', 'test', 'coveralls']);
+//gulp.task('default', ['test', 'coveralls']);
