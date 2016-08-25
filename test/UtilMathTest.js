@@ -51,7 +51,7 @@ describe('UtilMath', function () {
 
     });
 
-    describe('sumatory()',function(){
+    describe('sum()',function(){
         it('if no have list throw error', function () {
             var list = new LinkedList()
             expect(UtilMath.sum()).to.equal(0);
@@ -60,12 +60,117 @@ describe('UtilMath', function () {
             var list = new LinkedList()
             expect(UtilMath.sum(list)).to.equal(0);
         });
-        it('if list is emty return 0', function () {
+        it('if only object, sum is equeal', function () {
             var list = new LinkedList()
             list.push({uno:1})
             expect(UtilMath.sum(list)).to.equal({uno:1});
         });
-        
+        it('if only object whit 2 keys, sum is equeal at value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:1,dos:1});
+        });
+         it('if only object whit 2 keys, sum is equeal at plus value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2});
+        });
+         it('if only object whit 2 keys, sum is equeal at plus value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            list.push({uno:1, dos:1,tres:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2,tres:1});
+        });
+    });
+    
+    describe('sumSquared()',function(){
+        it('if no have list throw error', function () {
+            var list = new LinkedList()
+            expect(UtilMath.sum()).to.equal(0);
+        });
+        it('if list is emty return 0', function () {
+            var list = new LinkedList()
+            expect(UtilMath.sum(list)).to.equal(0);
+        });
+        it('if only object, sum is equeal at pow', function () {
+            var list = new LinkedList()
+            list.push({uno:1})
+            expect(UtilMath.sum(list)).to.equal({uno:1});
+        });
+        it('if only object whit 2 keys, sum is equeal at pow value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:1,dos:1});
+        });
+         it('if only object whit 2 keys, sum is equeal at pow value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2});
+        });
+         it('if only object whit 2 keys, sum is equeal at pow value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            list.push({uno:1, dos:1,tres:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2,tres:1});
+        });
+        it('if only object whit 2 keys, sum is equeal at pow value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            list.push({uno:1, dos:1,tres:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2,tres:1});
+        });
+        it('if only object whit 2 keys, sum is equeal at pow value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:2, dos:1})
+            list.push({uno:1, dos:1,tres:1})
+            expect(UtilMath.sum(list)).to.equal({uno:5,dos:2,tres:1});
+        });
+        it('if only object whit 2 keys, sum is equeal at pow value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:2, dos:1})
+            list.push({uno:1, dos:2,tres:1})
+            expect(UtilMath.sum(list)).to.equal({uno:5,dos:5,tres:1});
+        });
     });
 
+    describe('sumProduct()',function(){
+        it('if no have list throw error', function () {
+            var list = new LinkedList()
+            expect(UtilMath.sum()).to.equal(0);
+        });
+        it('if list is emty return 0', function () {
+            var list = new LinkedList()
+            expect(UtilMath.sum(list)).to.equal(0);
+        });
+        it('if only object, sum is equeal', function () {
+            var list = new LinkedList()
+            list.push({uno:1})
+            expect(UtilMath.sum(list)).to.equal({uno:1});
+        });
+        it('if only object whit 2 keys, sum is equeal at value of keys', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:1,dos:1});
+        });
+         it('', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2});
+        });
+        it('', function () {
+            var list = new LinkedList()
+            list.push({uno:1, dos:1})
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2});
+        });
+        it('', function () {
+            var list = new LinkedList()
+            list.push({uno:2, dos:1})
+            list.push({uno:1, dos:1})
+            expect(UtilMath.sum(list)).to.equal({uno:2,dos:2});
+        });
+    });
 });
